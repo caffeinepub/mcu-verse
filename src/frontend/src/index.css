@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+    /* MCU Verse Dark Theme - always dark */
+    --background: 0.07 0 0;
+    --foreground: 0.96 0 0;
+    --card: 0.11 0 0;
+    --card-foreground: 0.96 0 0;
+    --popover: 0.13 0 0;
+    --popover-foreground: 0.96 0 0;
+    --primary: 0.73 0.13 75;
+    --primary-foreground: 0.07 0 0;
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.96 0 0;
+    --muted: 0.16 0 0;
+    --muted-foreground: 0.65 0 0;
+    --accent: 0.73 0.13 75;
+    --accent-foreground: 0.07 0 0;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.96 0 0;
+    --border: 0.22 0 0;
+    --input: 0.14 0 0;
+    --ring: 0.73 0.13 75;
+    --chart-1: 0.73 0.13 75;
+    --chart-2: 0.55 0.22 25;
+    --chart-3: 0.65 0.15 50;
+    --chart-4: 0.48 0.18 20;
+    --chart-5: 0.8 0.1 85;
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.96 0 0;
+    --sidebar-primary: 0.73 0.13 75;
+    --sidebar-primary-foreground: 0.07 0 0;
+    --sidebar-accent: 0.16 0 0;
+    --sidebar-accent-foreground: 0.96 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.73 0.13 75;
+
+    /* Custom MCU tokens */
+    --maroon: 0.28 0.12 20;
+    --maroon-light: 0.35 0.14 20;
+    --gold: 0.73 0.13 75;
+    --gold-bright: 0.82 0.15 80;
+    --gold-dim: 0.58 0.1 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .text-gold-bright {
+    color: oklch(var(--gold-bright));
+  }
+  .bg-maroon {
+    background-color: oklch(var(--maroon));
+  }
+  .bg-maroon-light {
+    background-color: oklch(var(--maroon-light));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--gold)) 0%,
+      oklch(var(--gold-bright)) 50%,
+      oklch(var(--gold)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .maroon-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--maroon)) 0%,
+      oklch(var(--maroon-light)) 100%
+    );
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 20px oklch(var(--gold) / 0.25), 0 4px 24px
+      rgba(0, 0, 0, 0.5);
+  }
+  .gold-underline {
+    text-decoration: underline;
+    text-decoration-color: oklch(var(--gold));
+    text-underline-offset: 4px;
+  }
+}
